@@ -8,10 +8,10 @@
 		"XiaotianMC"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/XiaotianNB666/awa-library",
+		"sources": "https://github.com/XiaotianNB666/awa-library"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/awalib/icon.png",
 	"environment": "*",
 	"entrypoints": {
