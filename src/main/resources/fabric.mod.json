@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "awa-lib",
+	"id": "awalib",
 	"version": "${version}",
 	"name": "aωa library",
 	"description": "A library!!!",
@@ -17,6 +17,9 @@
 	"entrypoints": {
 		"main": [
 			"cn.gcte.awalib.AWALibrary"
+		],
+		"client": [
+			"cn.gcte.awalib.client.AwALibraryClient"
 		]
 	},
 	"mixins": [

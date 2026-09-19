@@ -1,13 +1,20 @@
 {
-	"required": true,
-	"package": "cn.gcte.awalib.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
+  "required": true,
+  "package": "cn.gcte.awalib.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+
+  ],
+  "server": [
+    "server.network.ServerConfigurationPacketListenerMixin"
+  ],
+  "client": [
+    "client.network.ClientConfigurationPacketListenerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
 	}
 }
