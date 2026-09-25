@@ -1,7 +1,7 @@
 package cn.gcte.awalib;
 
 import cn.gcte.awalib.network.AwAHandshakePayload;
-import cn.gcte.awalib.network.events.server.ServerConfigurationConnectionEvents;
+import cn.gcte.awalib.network.events.server.ServerConfigurationConnectionNetworking;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.loader.api.FabricLoader;
@@ -31,7 +31,7 @@ public class AWALibrary implements ModInitializer {
         // However, some things (like resources) may still be uninitialized.
         // Proceed with mild caution.
 
-        ServerConfigurationConnectionEvents.CONFIGURE.register(((handler, server) -> {
+        ServerConfigurationConnectionNetworking.CONFIGURE.register(((handler, server) -> {
             handler.send(new ClientboundCustomPayloadPacket(new AwAHandshakePayload(getModVersion())));
         }));
 

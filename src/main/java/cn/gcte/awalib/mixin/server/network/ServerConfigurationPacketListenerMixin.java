@@ -1,7 +1,7 @@
 package cn.gcte.awalib.mixin.server.network;
 
 
-import cn.gcte.awalib.network.events.server.ServerConfigurationConnectionEvents;
+import cn.gcte.awalib.network.events.server.ServerConfigurationConnectionNetworking;
 import net.minecraft.network.Connection;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.CommonListenerCookie;
@@ -21,6 +21,12 @@ public abstract class ServerConfigurationPacketListenerMixin extends ServerCommo
 
     @Inject(method = "startConfiguration", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/MinecraftServer;serverLinks()Lnet/minecraft/server/ServerLinks;"))
     public void startConfiguration(CallbackInfo ci) {
-        ServerConfigurationConnectionEvents.CONFIGURE.invoker().onSendConfiguration((ServerConfigurationPacketListenerImpl)(Object)(this), this.server);
+        ServerConfigurationConnectionNetworking.CONFIGURE.invoker().onSendConfiguration((ServerConfigurationPacketListenerImpl)(Object)(this), this.server);
     }
+
+    @Inject(method = "tick", at = @At(value = "RETURN"))
+    public void tick(CallbackInfo ci) {
+        ServerConfigurationConnectionNetworking.TICK.invoker().onTick((ServerConfigurationPacketListenerImpl)(Object)(this), this.server);
+    }
+
 }

@@ -1,7 +1,7 @@
 package cn.gcte.awalib.mixin.client.network;
 
 
-import cn.gcte.awalib.network.events.client.ClientConfigurationConnectionEvents;
+import cn.gcte.awalib.network.events.client.ClientConfigurationConnectionNetworking;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import net.minecraft.client.Minecraft;
@@ -25,12 +25,17 @@ public abstract class ClientConfigurationPacketListenerMixin extends ClientCommo
 
     @Inject(method = "handleConfigurationFinished", at = @At("HEAD"))
     public void handleConfigurationFinished(CallbackInfo ci) {
-        ClientConfigurationConnectionEvents.COMPLETE.invoker().onConfigurationComplete((ClientConfigurationPacketListenerImpl) (Object) (this), this.minecraft);
+        ClientConfigurationConnectionNetworking.COMPLETE.invoker().onConfigurationComplete((ClientConfigurationPacketListenerImpl) (Object) (this), this.minecraft);
+    }
+
+    @Inject(method = "tick", at = @At(value = "RETURN"))
+    public void tick(CallbackInfo ci) {
+        ClientConfigurationConnectionNetworking.TICK.invoker().onTick((ClientConfigurationPacketListenerImpl) (Object) (this), this.minecraft);
     }
 
     @WrapMethod(method = "handleUnknownCustomPayload")
     private void handleUnknownCustomPayload(CustomPacketPayload customPacketPayload, Operation<Void> original) {
-        if (!ClientConfigurationConnectionEvents.HANDLE_CUSTOM_PAYLOAD.invoker().onHandleCustomPayload((ClientConfigurationPacketListenerImpl) (Object) (this), customPacketPayload, this.minecraft)) {
+        if (!ClientConfigurationConnectionNetworking.HANDLE_CUSTOM_PAYLOAD.invoker().onHandleCustomPayload((ClientConfigurationPacketListenerImpl) (Object) (this), customPacketPayload, this.minecraft)) {
             original.call(customPacketPayload);
         }
     }

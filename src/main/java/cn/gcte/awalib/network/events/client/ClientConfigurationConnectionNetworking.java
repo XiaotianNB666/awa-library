@@ -5,12 +5,19 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientConfigurationPacketListenerImpl;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 
-public class ClientConfigurationConnectionEvents {
+public class ClientConfigurationConnectionNetworking {
     public static Event<Complete> COMPLETE = Event.Factory.createArrayBacked(Complete.class, callbacks -> (handler, server) -> {
         for (Complete callback : callbacks) {
             callback.onConfigurationComplete(handler, server);
         }
     });
+
+    public static Event<OnTick> TICK = Event.Factory.createArrayBacked(OnTick.class, callbacks -> (handler, server) -> {
+        for (OnTick callback : callbacks) {
+            callback.onTick(handler, server);
+        }
+    });
+
 
     public static Event<HandleCustomPayload> HANDLE_CUSTOM_PAYLOAD = Event.Factory.createArrayBacked(HandleCustomPayload.class, callbacks -> (handler, payload, client) -> {
         boolean handled = false;
@@ -25,6 +32,11 @@ public class ClientConfigurationConnectionEvents {
     @FunctionalInterface
     public interface Complete {
         void onConfigurationComplete(ClientConfigurationPacketListenerImpl handler, Minecraft client);
+    }
+
+    @FunctionalInterface
+    public interface OnTick {
+        void onTick(ClientConfigurationPacketListenerImpl handler, Minecraft client);
     }
 
     @FunctionalInterface
