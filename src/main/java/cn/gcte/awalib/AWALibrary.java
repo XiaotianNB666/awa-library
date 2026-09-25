@@ -5,6 +5,7 @@ import cn.gcte.awalib.network.events.server.ServerConfigurationConnectionNetwork
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.Version;
 import net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket;
 import net.minecraft.resources.ResourceLocation;
 
