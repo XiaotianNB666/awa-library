@@ -1,8 +1,6 @@
 package cn.gcte.awalib.network.events.server;
 
 import cn.gcte.awalib.event.Event;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.ClientConfigurationPacketListenerImpl;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerConfigurationPacketListenerImpl;
 
