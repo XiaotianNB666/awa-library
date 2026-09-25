@@ -1,10 +1,13 @@
 package cn.gcte.awalib.network.events.client;
 
 import cn.gcte.awalib.event.Event;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientConfigurationPacketListenerImpl;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 
+@Environment(EnvType.CLIENT)
 public class ClientConfigurationConnectionNetworking {
     public static Event<Complete> COMPLETE = Event.Factory.createArrayBacked(Complete.class, callbacks -> (handler, server) -> {
         for (Complete callback : callbacks) {
