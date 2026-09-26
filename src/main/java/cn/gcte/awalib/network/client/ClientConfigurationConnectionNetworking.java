@@ -1,4 +1,4 @@
-package cn.gcte.awalib.network.events.client;
+package cn.gcte.awalib.network.client;
 
 import cn.gcte.awalib.event.Event;
 import net.fabricmc.api.EnvType;

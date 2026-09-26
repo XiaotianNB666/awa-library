@@ -1,7 +1,7 @@
 package cn.gcte.awalib.mixin.server.network;
 
 
-import cn.gcte.awalib.network.events.server.ServerConfigurationConnectionNetworking;
+import cn.gcte.awalib.network.server.ServerConfigurationConnectionNetworking;
 import net.minecraft.network.Connection;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.CommonListenerCookie;

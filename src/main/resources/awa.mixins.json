@@ -3,13 +3,13 @@
   "package": "cn.gcte.awalib.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-
   ],
   "server": [
     "server.network.ServerConfigurationPacketListenerMixin"
   ],
   "client": [
-    "client.network.ClientConfigurationPacketListenerMixin"
+    "client.network.ClientConfigurationPacketListenerMixin",
+    "client.network.ClientPlayPacketListenerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,7 +1,7 @@
 package cn.gcte.awalib.mixin.client.network;
 
 
-import cn.gcte.awalib.network.events.client.ClientConfigurationConnectionNetworking;
+import cn.gcte.awalib.network.client.ClientConfigurationConnectionNetworking;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import net.minecraft.client.Minecraft;

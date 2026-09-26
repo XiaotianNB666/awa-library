@@ -1,4 +1,4 @@
-package cn.gcte.awalib.network.events.server;
+package cn.gcte.awalib.network.server;
 
 import cn.gcte.awalib.event.Event;
 import net.minecraft.server.MinecraftServer;

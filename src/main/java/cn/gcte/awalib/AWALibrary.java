@@ -1,11 +1,10 @@
 package cn.gcte.awalib;
 
 import cn.gcte.awalib.network.AwAHandshakePayload;
-import cn.gcte.awalib.network.events.server.ServerConfigurationConnectionNetworking;
+import cn.gcte.awalib.network.server.ServerConfigurationConnectionNetworking;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.loader.api.FabricLoader;
-import net.fabricmc.loader.api.Version;
 import net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket;
 import net.minecraft.resources.ResourceLocation;
 
